@@ -12,9 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
+    
+    private func testArrayQuestions() {
+        let arrayToTest = [1, 3, 4, 6, 9, 12]
+        print(arrayToTest.isThereAnyTriplets(for: 24))
+    }
 
 }
 

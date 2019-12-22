@@ -13,6 +13,7 @@
 		93CF515223AE5C1800857A3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93CF515023AE5C1800857A3D /* Main.storyboard */; };
 		93CF515423AE5C1A00857A3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93CF515323AE5C1A00857A3D /* Assets.xcassets */; };
 		93CF515723AE5C1A00857A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93CF515523AE5C1A00857A3D /* LaunchScreen.storyboard */; };
+		93CF516023AE5CA700857A3D /* ArrayQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF515F23AE5CA700857A3D /* ArrayQuestions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		93CF515323AE5C1A00857A3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93CF515623AE5C1A00857A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93CF515823AE5C1A00857A3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93CF515F23AE5CA700857A3D /* ArrayQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayQuestions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +61,21 @@
 				93CF514A23AE5C1800857A3D /* AppDelegate.swift */,
 				93CF514C23AE5C1800857A3D /* SceneDelegate.swift */,
 				93CF514E23AE5C1800857A3D /* ViewController.swift */,
+				93CF515E23AE5C9A00857A3D /* Arrays */,
 				93CF515023AE5C1800857A3D /* Main.storyboard */,
 				93CF515323AE5C1A00857A3D /* Assets.xcassets */,
 				93CF515523AE5C1A00857A3D /* LaunchScreen.storyboard */,
 				93CF515823AE5C1A00857A3D /* Info.plist */,
 			);
 			path = DSQuestionBasket;
+			sourceTree = "<group>";
+		};
+		93CF515E23AE5C9A00857A3D /* Arrays */ = {
+			isa = PBXGroup;
+			children = (
+				93CF515F23AE5CA700857A3D /* ArrayQuestions.swift */,
+			);
+			path = Arrays;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93CF514F23AE5C1800857A3D /* ViewController.swift in Sources */,
+				93CF516023AE5CA700857A3D /* ArrayQuestions.swift in Sources */,
 				93CF514B23AE5C1800857A3D /* AppDelegate.swift in Sources */,
 				93CF514D23AE5C1800857A3D /* SceneDelegate.swift in Sources */,
 			);
