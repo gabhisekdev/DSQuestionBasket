@@ -66,12 +66,28 @@ extension ViewController {
         print("\n Left view of the tree by queue: ")
         TreeQuestions().leftViewOfBinaryTreeUsingQueue(rootNode: rootNode)
         
+        testBinaryTreeQuestions()
+    }
+    
+    private func testBinaryTreeQuestions() {
+        
+        let rootNode = TreeNode(value: 20)
+        rootNode.left = TreeNode(value: 10)
+        rootNode.right = TreeNode(value: 25)
+        rootNode.left?.left = TreeNode(value: 8)
+        rootNode.left?.right = TreeNode(value: 12)
+        rootNode.right?.left = TreeNode(value: 23)
+        rootNode.right?.right = TreeNode(value: 27)
+        
         let binaryTree = BinaryTree(rootNode: rootNode)
-        print("\n Left view of the tree by recursion: ")
+        print("\n Left view of the binary tree by recursion: ")
         binaryTree.printLeftView()
         
-        print("\n Right view of the tree by recursion: ")
+        print("\n Right view of the binary tree by recursion: ")
         binaryTree.printRightView()
+        
+        print("\n Binary tree is \(binaryTree.isBST ? "a" : "not a") BST")
+        
     }
     
 }

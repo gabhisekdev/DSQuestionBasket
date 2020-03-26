@@ -16,6 +16,10 @@ class BinaryTree<T> {
         self.rootNode = rootNode
     }
     
+}
+
+// MARK: Tree traversals
+extension BinaryTree {
     func printLeftView() {
         maxLevel = 0
         leftView(rootNode: rootNode, level: 1)
@@ -48,5 +52,25 @@ class BinaryTree<T> {
         
         rightView(rootNode: node.right, level: level + 1)
         rightView(rootNode: node.left, level: level + 1)
+    }
+}
+
+//MARK: Tree traversals
+extension BinaryTree where T == Int {
+    var isBST: Bool {
+        isBinarySearchTree(node: rootNode,max: Int.max, min: Int.min)
+    }
+    
+    private func isBinarySearchTree(node: TreeNode<T>?, max: Int, min: Int) -> Bool {
+        guard let currentNode = node else {
+            return true
+        }
+        
+        guard  currentNode.value < max && currentNode.value > min else {
+            return false
+        }
+        
+        return isBinarySearchTree(node: currentNode.left, max: currentNode.value, min: min) &&
+            isBinarySearchTree(node: currentNode.right, max: max, min: currentNode.value)
     }
 }
