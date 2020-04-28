@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController  {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         testArrayQuestions()
@@ -20,7 +23,13 @@ class ViewController: UIViewController {
 
 extension ViewController {
     func testArrayQuestions() {
-        testSubArray() 
+        testSubArray()
+        testBubbleSort()
+        testSelectionSort()
+        testInsertionSortSwap()
+        testInsertionSortShifting()
+        testQuickSort()
+        testMergeSort()
     }
     
     func testSubArray() {
@@ -39,6 +48,48 @@ extension ViewController {
         let testArray2 = [1, 4, 20, 3, 10, 5]
         findAndPrintSubArrayIndex(array: testArray2, sum: 33)
     }
+    
+    func testBubbleSort() {
+        var testArray = [7, 8, 9, 5, 6, 2]
+        print("\nBubble sort of the array - \(testArray) is")
+        testArray.bubbleSort()
+        print(testArray)
+    }
+    
+    func testSelectionSort() {
+        var testArray = [4, 2, 9, 10, 5]
+        print("\nSelection sort of the array - \(testArray) is")
+        testArray.selectionSort()
+        print(testArray)
+    }
+    
+    func testInsertionSortSwap() {
+        var testArray = [4, 4, 2, 9, 10, 5]
+        print("\nInsertion sort by swap of the array - \(testArray) is")
+        testArray.insertionSortSwap()
+        print(testArray)
+    }
+    
+    func testInsertionSortShifting() {
+        var testArray = [4, 2, 9, 10, 5]
+        print("\nInsertion sort by shifting of the array - \(testArray) is")
+        testArray.insertionSortShift()
+        print(testArray)
+    }
+    
+    func testQuickSort() {
+        var testArray = [7, 6, 10, 5, 7]
+        print("\nQuick sort of the array - \(testArray) is")
+        testArray.quickSort()
+        print(testArray)
+    }
+    
+    func testMergeSort() {
+        var testArray = [8, 5, 3, 4, 1, 10]
+        print("\nMerge sort of the array - \(testArray) is")
+        testArray.mergeSort()
+        print(testArray)
+    }
 }
 
 extension ViewController {
@@ -51,26 +102,25 @@ extension ViewController {
         rootNode.right?.left = TreeNode(value: 6)
         rootNode.right?.right = TreeNode(value: 7)
         
-        print("\n Inorder Traversal:")
+        print("\nInorder Traversal:")
         TreeQuestions().traverseInOrder(rootNode: rootNode)
-        print("\n Postorder Traversal:")
+        print("\nPostorder Traversal:")
         TreeQuestions().traversePostOrder(rootNode: rootNode)
-        print("\n Preorder Traversal:")
+        print("\nPreorder Traversal:")
         TreeQuestions().traversePreOrder(rootNode: rootNode)
         
-        print("\n Level order teaversal in one line:")
+        print("\nLevel order teaversal in one line:")
         TreeQuestions().levelOrderTraversalInOneLine(rootNode: rootNode)
-        print("\n Level order teaversal and print level by level:")
+        print("\nLevel order teaversal and print level by level:")
         TreeQuestions().levelOrderTraversalPrintLevelByLevel(rootNode: rootNode)
         
-        print("\n Left view of the tree by queue: ")
+        print("\nLeft view of the tree by queue: ")
         TreeQuestions().leftViewOfBinaryTreeUsingQueue(rootNode: rootNode)
         
         testBinaryTreeQuestions()
     }
     
     private func testBinaryTreeQuestions() {
-        
         let rootNode = TreeNode(value: 20)
         rootNode.left = TreeNode(value: 10)
         rootNode.right = TreeNode(value: 25)
@@ -80,14 +130,30 @@ extension ViewController {
         rootNode.right?.right = TreeNode(value: 27)
         
         let binaryTree = BinaryTree(rootNode: rootNode)
-        print("\n Left view of the binary tree by recursion: ")
+        print("\nLeft view of the binary tree by recursion: ")
         binaryTree.printLeftView()
         
-        print("\n Right view of the binary tree by recursion: ")
+        print("\nRight view of the binary tree by recursion: ")
         binaryTree.printRightView()
         
-        print("\n Binary tree is \(binaryTree.isBST ? "a" : "not a") BST")
+        print("\nBinary tree is \(binaryTree.isBST ? "a" : "not a") BST")
         
+        getLargestBinaryTree()
+    }
+    
+    private func getLargestBinaryTree() {
+        let fifteen = BinaryTreeNode(15, nil, nil)
+        let eighteenLeaf = BinaryTreeNode(18, nil, nil)
+        let twentyFive = BinaryTreeNode(25, nil, nil)
+        let thirty = BinaryTreeNode(30, nil, nil)
+        let sixty = BinaryTreeNode(60, nil, nil)
+        let nineteen = BinaryTreeNode(19, nil, fifteen)
+        let twenty = BinaryTreeNode(20, eighteenLeaf, twentyFive)
+        let eighteen = BinaryTreeNode(18, nineteen, twenty)
+        let fifty = BinaryTreeNode(50, thirty, sixty)
+        let root = BinaryTreeNode(25, eighteen, fifty)
+        
+        print("\nLargest in BST in binary tree - \(root.maxSizeBST)")
     }
     
 }
