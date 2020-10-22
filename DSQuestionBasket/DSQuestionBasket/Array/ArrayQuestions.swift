@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: Find subarray
 extension Array where Element == Int {
     
     /*
@@ -42,6 +43,7 @@ extension Array where Element == Int {
     
 }
 
+// MARK: Bubble Sort
 extension Array where Element: Comparable {
     mutating func bubbleSort() {
         for i in 0..<count-1 {
@@ -52,7 +54,10 @@ extension Array where Element: Comparable {
             }
         }
     }
-    
+}
+
+// MARK: Selection sort
+extension Array where Element: Comparable {
     mutating func selectionSort() {
         for i in 0..<count-1{
             var min = i
@@ -65,7 +70,10 @@ extension Array where Element: Comparable {
             swapAt(i, min)
         }
     }
-    
+}
+
+// MARK: Insertion sort
+extension Array where Element: Comparable {
     // Swapping has more number of operations so slightly
     mutating func insertionSortSwap() {
         for x in 1..<count {
@@ -94,7 +102,7 @@ extension Array where Element: Comparable {
     }
 }
 
-// Quick sort
+// MARK: Quick sort
 extension Array where Element: Comparable {
     mutating func quickSort() {
         quickSort(lowerBound: 0, upperBound: count-1)
@@ -136,9 +144,8 @@ extension Array where Element: Comparable {
     
 }
 
-// Merge Sort
+// MARK: Merge Sort
 extension Array where Element: Comparable {
-    
     mutating func mergeSort() {
         mergeSort(lb: 0, ub: count-1)
     }

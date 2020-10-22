@@ -30,4 +30,25 @@ class LinkedList<T> {
     var first: Node? {
         return head
     }
+    
+    var last: Node? {
+        guard var node = head else {
+            return nil
+        }
+        
+        while let next = node.next {
+            node = next
+        }
+        return node
+    }
+    
+    func append(value: T) {
+        let newNode = Node(value: value)
+        if let lastNode = last {
+            newNode.previous = lastNode
+            lastNode.next = newNode
+        } else {
+            head = newNode
+        }
+    }
 }

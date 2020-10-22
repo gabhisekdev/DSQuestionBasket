@@ -8,49 +8,42 @@
 
 import Foundation
 
-enum PrintOrder {
-    case singleLine
-    case levelByLevel
-}
-
 struct TreeQuestions {
-    func levelOrderTraversalInOneLine<T>(rootNode: TreeNode<T>?) {
-        guard let node = rootNode else { return }
-        var traversalQueue = Queue<TreeNode<T>>()
+    func levelOrderTraversalInOneLine<T>(rootNode: BinaryTreeNode<T>) {
+        var traversalQueue = Queue<BinaryTreeNode<T>>()
         
-        traversalQueue.enqueue(node)
+        traversalQueue.enqueue(rootNode)
         
         while !traversalQueue.isEmpty {
             let currentNode = traversalQueue.dequeue()
             print(currentNode?.value)
             
-            if let leftNode = currentNode?.left {
+            if let leftNode = currentNode?.leftChild {
                 traversalQueue.enqueue(leftNode)
             }
             
-            if let rightNode = currentNode?.right {
+            if let rightNode = currentNode?.rightChild {
                 traversalQueue.enqueue(rightNode)
             }
         }
     }
     
-    func levelOrderTraversalPrintLevelByLevel<T>(rootNode: TreeNode<T>?) {
-        guard let node = rootNode else { return }
-        var firstQueue = Queue<TreeNode<T>>()
-        var secondQueue = Queue<TreeNode<T>>()
-        var currentNode: TreeNode<T>?
+    func levelOrderTraversalPrintLevelByLevel<T>(rootNode: BinaryTreeNode<T>) {
+        var firstQueue = Queue<BinaryTreeNode<T>>()
+        var secondQueue = Queue<BinaryTreeNode<T>>()
+        var currentNode: BinaryTreeNode<T>?
         var levelValues: String = ""
         
-        firstQueue.enqueue(node)
+        firstQueue.enqueue(rootNode)
         
         while !firstQueue.isEmpty || !secondQueue.isEmpty {
             while !firstQueue.isEmpty {
                 currentNode = firstQueue.dequeue()
-                if let leftElement = currentNode?.left {
+                if let leftElement = currentNode?.leftChild {
                     secondQueue.enqueue(leftElement)
                 }
                 
-                if let rightElement = currentNode?.right {
+                if let rightElement = currentNode?.rightChild {
                     secondQueue.enqueue(rightElement)
                 }
                 if let currNode = currentNode {
@@ -62,11 +55,11 @@ struct TreeQuestions {
             
             while !secondQueue.isEmpty {
                 currentNode = secondQueue.dequeue()
-                if let leftElement = currentNode?.left {
+                if let leftElement = currentNode?.leftChild {
                     firstQueue.enqueue(leftElement)
                 }
                 
-                if let rightElement = currentNode?.right {
+                if let rightElement = currentNode?.rightChild {
                     firstQueue.enqueue(rightElement)
                 }
                 
@@ -79,23 +72,22 @@ struct TreeQuestions {
         }
     }
     
-    func leftViewOfBinaryTreeUsingQueue<T>(rootNode: TreeNode<T>?) {
-        guard let node = rootNode else { return }
-        var firstQueue = Queue<TreeNode<T>>()
-        var secondQueue = Queue<TreeNode<T>>()
-        var currentNode: TreeNode<T>?
+    func leftViewOfBinaryTreeUsingQueue<T>(rootNode: BinaryTreeNode<T>) {
+        var firstQueue = Queue<BinaryTreeNode<T>>()
+        var secondQueue = Queue<BinaryTreeNode<T>>()
+        var currentNode: BinaryTreeNode<T>?
         var queueElementNumber = 1
         
-        firstQueue.enqueue(node)
+        firstQueue.enqueue(rootNode)
         
         while !firstQueue.isEmpty || !secondQueue.isEmpty {
             while !firstQueue.isEmpty {
                 currentNode = firstQueue.dequeue()
-                if let leftElement = currentNode?.left {
+                if let leftElement = currentNode?.leftChild {
                     secondQueue.enqueue(leftElement)
                 }
                 
-                if let rightElement = currentNode?.right {
+                if let rightElement = currentNode?.rightChild {
                     secondQueue.enqueue(rightElement)
                 }
                 
@@ -110,11 +102,11 @@ struct TreeQuestions {
             
             while !secondQueue.isEmpty {
                 currentNode = secondQueue.dequeue()
-                if let leftElement = currentNode?.left {
+                if let leftElement = currentNode?.leftChild {
                     firstQueue.enqueue(leftElement)
                 }
                 
-                if let rightElement = currentNode?.right {
+                if let rightElement = currentNode?.rightChild {
                     firstQueue.enqueue(rightElement)
                 }
                 
@@ -133,24 +125,76 @@ struct TreeQuestions {
 
 // MARK: DFS traversals
 extension TreeQuestions {
-    func traversePreOrder<T>(rootNode: TreeNode<T>?) {
+    func traversePreOrder<T>(rootNode: BinaryTreeNode<T>?) {
         guard let node = rootNode else { return }
         print("\(node.value)")
-        traversePreOrder(rootNode: rootNode?.left)
-        traversePreOrder(rootNode: rootNode?.right)
+        traversePreOrder(rootNode: rootNode?.leftChild)
+        traversePreOrder(rootNode: rootNode?.rightChild)
     }
     
-    func traverseInOrder<T>(rootNode: TreeNode<T>?) {
+    func traverseInOrder<T>(rootNode: BinaryTreeNode<T>?) {
         guard let node = rootNode else { return }
-        traverseInOrder(rootNode: rootNode?.left)
+        traverseInOrder(rootNode: rootNode?.leftChild)
         print("\(node.value)")
-        traverseInOrder(rootNode: rootNode?.right)
+        traverseInOrder(rootNode: rootNode?.rightChild)
     }
     
-    func traversePostOrder<T>(rootNode: TreeNode<T>?) {
+    func traversePostOrder<T>(rootNode: BinaryTreeNode<T>?) {
         guard let node = rootNode else { return }
-        traversePostOrder(rootNode: rootNode?.left)
-        traversePostOrder(rootNode: rootNode?.right)
+        traversePostOrder(rootNode: rootNode?.leftChild)
+        traversePostOrder(rootNode: rootNode?.rightChild)
         print("\(node.value)")
+    }
+}
+
+extension TreeQuestions {
+    func testTraversals() {
+        let sevenNode = BinaryTreeNode(7, nil, nil)
+        let sixNode = BinaryTreeNode(6, sevenNode, nil)
+        let fiveNode = BinaryTreeNode(5, nil, nil)
+        let fourNode = BinaryTreeNode(4, nil, nil)
+        let twoNode = BinaryTreeNode(2, fourNode, fiveNode)
+        let threeNode = BinaryTreeNode(3, sixNode, nil)
+        let rootNode = BinaryTreeNode(1, twoNode, threeNode)
+        
+        print("\nInorder Traversal:")
+        TreeQuestions().traverseInOrder(rootNode: rootNode)
+        print("\nPostorder Traversal:")
+        TreeQuestions().traversePostOrder(rootNode: rootNode)
+        print("\nPreorder Traversal:")
+        TreeQuestions().traversePreOrder(rootNode: rootNode)
+        
+        print("\nLevel order teaversal in one line:")
+        TreeQuestions().levelOrderTraversalInOneLine(rootNode: rootNode)
+        print("\nLevel order teaversal and print level by level:")
+        TreeQuestions().levelOrderTraversalPrintLevelByLevel(rootNode: rootNode)
+    }
+}
+
+extension TreeQuestions {
+    func testBinaryTreeQuestions() {
+        let fifteen = BinaryTreeNode(15, nil, nil)
+        let eighteenLeaf = BinaryTreeNode(18, nil, nil)
+        let twentyFive = BinaryTreeNode(25, nil, nil)
+        let thirty = BinaryTreeNode(30, nil, nil)
+        let sixty = BinaryTreeNode(60, nil, nil)
+        let nineteen = BinaryTreeNode(19, nil, fifteen)
+        let twenty = BinaryTreeNode(20, eighteenLeaf, twentyFive)
+        let eighteen = BinaryTreeNode(18, nineteen, twenty)
+        let fifty = BinaryTreeNode(50, thirty, sixty)
+        let root = BinaryTreeNode(25, eighteen, fifty)
+        
+        let binaryTree = BinaryTree(rootNode: root)
+        print("\nLeft view of the binary tree by recursion: ")
+        binaryTree.printLeftView()
+        
+        print("\nLeft view of the tree by queue: ")
+        TreeQuestions().leftViewOfBinaryTreeUsingQueue(rootNode: root)
+        
+        print("\nRight view of the binary tree by recursion: ")
+        binaryTree.printRightView()
+        
+        print("\nBinary tree is \(root.isBST ? "a" : "not a") BST")
+        print("\nLargest in BST in binary tree - \(root.maxSizeBST)")
     }
 }

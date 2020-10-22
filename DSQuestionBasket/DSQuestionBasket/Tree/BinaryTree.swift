@@ -9,13 +9,12 @@
 import Foundation
 
 class BinaryTree<T: Comparable> {
-    let rootNode: TreeNode<T>
+    let rootNode: BinaryTreeNode<T>
     var maxLevel = 0
     
-    init(rootNode: TreeNode<T>) {
+    init(rootNode: BinaryTreeNode<T>) {
         self.rootNode = rootNode
     }
-    
 }
 
 class BinaryTreeNode<T: Comparable> {
@@ -42,7 +41,21 @@ extension BinaryTree {
         rightView(rootNode: rootNode, level: 1)
     }
     
-    private func leftView(rootNode: TreeNode<T>?, level: Int) {
+    private func leftView(rootNode: BinaryTreeNode<T>?, level: Int) {
+        guard let node = rootNode else { return }
+        
+        print("Level - \(level)")
+        print("Max Level - \(maxLevel)")
+        if maxLevel < level {
+            print(node.value)
+            maxLevel += 1
+        }
+        
+        leftView(rootNode: node.leftChild, level: level + 1)
+        leftView(rootNode: node.rightChild, level: level + 1)
+    }
+    
+    private func rightView(rootNode: BinaryTreeNode<T>?, level: Int) {
         guard let node = rootNode else { return }
         
         if maxLevel < level {
@@ -50,40 +63,8 @@ extension BinaryTree {
             maxLevel += 1
         }
         
-        leftView(rootNode: node.left, level: level + 1)
-        leftView(rootNode: node.right, level: level + 1)
-    }
-    
-    private func rightView(rootNode: TreeNode<T>?, level: Int) {
-        guard let node = rootNode else { return }
-        
-        if maxLevel < level {
-            print(node.value)
-            maxLevel += 1
-        }
-        
-        rightView(rootNode: node.right, level: level + 1)
-        rightView(rootNode: node.left, level: level + 1)
-    }
-}
-
-//MARK: BST
-extension BinaryTree where T == Int {
-    var isBST: Bool {
-        isBinarySearchTree(node: rootNode,max: Int.max, min: Int.min)
-    }
-    
-    private func isBinarySearchTree(node: TreeNode<T>?, max: Int, min: Int) -> Bool {
-        guard let currentNode = node else {
-            return true
-        }
-        
-        guard  currentNode.value < max && currentNode.value > min else {
-            return false
-        }
-        
-        return isBinarySearchTree(node: currentNode.left, max: currentNode.value, min: min) &&
-            isBinarySearchTree(node: currentNode.right, max: max, min: currentNode.value)
+        rightView(rootNode: node.rightChild, level: level + 1)
+        rightView(rootNode: node.leftChild, level: level + 1)
     }
 }
 

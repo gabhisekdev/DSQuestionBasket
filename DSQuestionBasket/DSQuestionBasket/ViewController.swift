@@ -78,9 +78,9 @@ extension ViewController {
     }
     
     func testQuickSort() {
-        var testArray = [7, 6, 10, 5, 7]
+        var testArray = [5, 10, 11,12, 9]
         print("\nQuick sort of the array - \(testArray) is")
-        testArray.quickSort()
+        //testArray.quickSort()
         print(testArray)
     }
     
@@ -94,66 +94,7 @@ extension ViewController {
 
 extension ViewController {
     func testTreeQuestions() {
-        let rootNode = TreeNode(value: 1)
-        rootNode.left = TreeNode(value: 2)
-        rootNode.right = TreeNode(value: 3)
-        rootNode.left?.left = TreeNode(value: 4)
-        rootNode.left?.right = TreeNode(value: 5)
-        rootNode.right?.left = TreeNode(value: 6)
-        rootNode.right?.right = TreeNode(value: 7)
-        
-        print("\nInorder Traversal:")
-        TreeQuestions().traverseInOrder(rootNode: rootNode)
-        print("\nPostorder Traversal:")
-        TreeQuestions().traversePostOrder(rootNode: rootNode)
-        print("\nPreorder Traversal:")
-        TreeQuestions().traversePreOrder(rootNode: rootNode)
-        
-        print("\nLevel order teaversal in one line:")
-        TreeQuestions().levelOrderTraversalInOneLine(rootNode: rootNode)
-        print("\nLevel order teaversal and print level by level:")
-        TreeQuestions().levelOrderTraversalPrintLevelByLevel(rootNode: rootNode)
-        
-        print("\nLeft view of the tree by queue: ")
-        TreeQuestions().leftViewOfBinaryTreeUsingQueue(rootNode: rootNode)
-        
-        testBinaryTreeQuestions()
+        TreeQuestions().testTraversals()
+        TreeQuestions().testBinaryTreeQuestions()
     }
-    
-    private func testBinaryTreeQuestions() {
-        let rootNode = TreeNode(value: 20)
-        rootNode.left = TreeNode(value: 10)
-        rootNode.right = TreeNode(value: 25)
-        rootNode.left?.left = TreeNode(value: 8)
-        rootNode.left?.right = TreeNode(value: 12)
-        rootNode.right?.left = TreeNode(value: 23)
-        rootNode.right?.right = TreeNode(value: 27)
-        
-        let binaryTree = BinaryTree(rootNode: rootNode)
-        print("\nLeft view of the binary tree by recursion: ")
-        binaryTree.printLeftView()
-        
-        print("\nRight view of the binary tree by recursion: ")
-        binaryTree.printRightView()
-        
-        print("\nBinary tree is \(binaryTree.isBST ? "a" : "not a") BST")
-        
-        getLargestBinaryTree()
-    }
-    
-    private func getLargestBinaryTree() {
-        let fifteen = BinaryTreeNode(15, nil, nil)
-        let eighteenLeaf = BinaryTreeNode(18, nil, nil)
-        let twentyFive = BinaryTreeNode(25, nil, nil)
-        let thirty = BinaryTreeNode(30, nil, nil)
-        let sixty = BinaryTreeNode(60, nil, nil)
-        let nineteen = BinaryTreeNode(19, nil, fifteen)
-        let twenty = BinaryTreeNode(20, eighteenLeaf, twentyFive)
-        let eighteen = BinaryTreeNode(18, nineteen, twenty)
-        let fifty = BinaryTreeNode(50, thirty, sixty)
-        let root = BinaryTreeNode(25, eighteen, fifty)
-        
-        print("\nLargest in BST in binary tree - \(root.maxSizeBST)")
-    }
-    
 }
