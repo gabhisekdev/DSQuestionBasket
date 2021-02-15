@@ -20,6 +20,7 @@
 		93B13805242C4176005F1779 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B137F9242C4176005F1779 /* BinaryTree.swift */; };
 		93B13806242C4176005F1779 /* StringQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B137FB242C4176005F1779 /* StringQuestions.swift */; };
 		93B13807242C4176005F1779 /* ArrayQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B137FF242C4176005F1779 /* ArrayQuestions.swift */; };
+		93FC82B92547C718004339D0 /* Displayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC82B82547C718004339D0 /* Displayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		93B137F9242C4176005F1779 /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		93B137FB242C4176005F1779 /* StringQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringQuestions.swift; sourceTree = "<group>"; };
 		93B137FF242C4176005F1779 /* ArrayQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayQuestions.swift; sourceTree = "<group>"; };
+		93FC82B82547C718004339D0 /* Displayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				93B137DD242C408A005F1779 /* AppDelegate.swift */,
 				93B137DF242C408A005F1779 /* SceneDelegate.swift */,
 				93B137E1242C408A005F1779 /* ViewController.swift */,
+				93FC82B82547C718004339D0 /* Displayer.swift */,
 				93B137E3242C408A005F1779 /* Main.storyboard */,
 				93B137E6242C408A005F1779 /* Assets.xcassets */,
 				93B137E8242C408A005F1779 /* LaunchScreen.storyboard */,
@@ -221,6 +224,7 @@
 				93B137E2242C408A005F1779 /* ViewController.swift in Sources */,
 				93B13807242C4176005F1779 /* ArrayQuestions.swift in Sources */,
 				93B13801242C4176005F1779 /* LinkedListQuestions.swift in Sources */,
+				93FC82B92547C718004339D0 /* Displayer.swift in Sources */,
 				93B137DE242C408A005F1779 /* AppDelegate.swift in Sources */,
 				93B13805242C4176005F1779 /* BinaryTree.swift in Sources */,
 				93B137E0242C408A005F1779 /* SceneDelegate.swift in Sources */,
