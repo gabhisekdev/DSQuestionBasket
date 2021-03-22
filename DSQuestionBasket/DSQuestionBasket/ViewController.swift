@@ -15,9 +15,11 @@ class ViewController: UIViewController  {
         super.viewDidLoad()
         testArrayQuestions()
         testTreeQuestions()
+        testPracticeQuestions()
     }
 }
 
+// MARK: testArrayQuestions
 extension ViewController {
     func testArrayQuestions() {
         displayPrint("Bubble sort") {
@@ -46,6 +48,10 @@ extension ViewController {
                 
         displayPrint("Merge sort") {
             testMergeSort()
+        }
+        
+        displayPrint("Max sum subarray") {
+            testMaxSumSubarray()
         }
     }
     
@@ -107,11 +113,27 @@ extension ViewController {
         testArray.mergeSort()
         print(testArray)
     }
+    
+    func testMaxSumSubarray() {
+        let testArray = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+        print("\nTest array - \(testArray)")
+        print(SolutionArray().maxSubArray(testArray))
+    }
 }
 
+// MARK: testTreeQuestions
 extension ViewController {
     func testTreeQuestions() {
         TreeQuestions().testTraversals()
         TreeQuestions().testBinaryTreeQuestions()
+    }
+}
+
+// MARK: testPracticeQuestions
+extension ViewController {
+    func testPracticeQuestions() {
+        displayPrint("Practice questions") {
+            PracticeQuestions().startTesting()
+        }
     }
 }

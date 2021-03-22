@@ -197,3 +197,34 @@ extension Array where Element == Int {
     }
     
 }
+
+// MARK: Sort array 0's 1's and 2's
+/* Given an array of size N containing only 0s, 1s, and 2s; sort the array in ascending order. */
+extension Array {
+    mutating func sort0s1s2s() {
+        
+    }
+}
+
+// MARK:
+/*Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+ 
+ Example:
+ Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+ Output: 6
+ Explanation: [4,-1,2,1] has the largest sum = 6.
+ 
+ Solution: https://www.youtube.com/watch?v=2MmGzdiKR9Y */
+class SolutionArray {
+    func maxSubArray(_ nums: [Int]) -> Int {
+        var maxSoFar = nums[0]
+        var maxEndingHere = nums[0]
+        
+        for i in 1 ..< nums.count {
+            maxEndingHere = Swift.max(nums[i], nums[i]+maxEndingHere)
+            maxSoFar = Swift.max(maxEndingHere, maxSoFar)
+        }
+        
+        return maxSoFar
+    }
+}
