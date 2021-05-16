@@ -120,7 +120,6 @@ struct TreeQuestions {
             queueElementNumber = 1
         }
     }
-    
 }
 
 // MARK: DFS traversals

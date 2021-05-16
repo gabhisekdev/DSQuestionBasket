@@ -13,9 +13,27 @@ class ViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        testStringQuestions()
         testArrayQuestions()
         testTreeQuestions()
         testPracticeQuestions()
+        
+        LeetCodeSolutions().solve()
+        
+        var parentString: String? = "Hello Swift!"
+        withUnsafePointer(to: &parentString, { NSLog("($0)") })
+
+        let someIndex = parentString?.prefix(6)
+        parentString = nil
+    }
+}
+
+extension ViewController {
+    func testStringQuestions() {
+        var chars: [Character] = ["H","a","n","n","a","h"]
+        displayPrint("Reverse string using recursion") {
+            SolutionString().reverseString(&chars)
+        }
     }
 }
 
@@ -137,3 +155,5 @@ extension ViewController {
         }
     }
 }
+
+

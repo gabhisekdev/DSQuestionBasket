@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		936B13B62627E094003B00F3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B13B52627E094003B00F3 /* String.swift */; };
+		937EC645260F2D7F00A27CB4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937EC644260F2D7F00A27CB4 /* Array.swift */; };
+		937EC649260F2D9400A27CB4 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937EC648260F2D9400A27CB4 /* Tree.swift */; };
 		93B137DE242C408A005F1779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B137DD242C408A005F1779 /* AppDelegate.swift */; };
 		93B137E0242C408A005F1779 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B137DF242C408A005F1779 /* SceneDelegate.swift */; };
 		93B137E2242C408A005F1779 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B137E1242C408A005F1779 /* ViewController.swift */; };
@@ -21,10 +24,16 @@
 		93B13806242C4176005F1779 /* StringQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B137FB242C4176005F1779 /* StringQuestions.swift */; };
 		93B13807242C4176005F1779 /* ArrayQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B137FF242C4176005F1779 /* ArrayQuestions.swift */; };
 		93D850A425DE13B300527B83 /* PracticeQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D850A325DE13B300527B83 /* PracticeQuestions.swift */; };
+		93D979C9262D24C500E5E053 /* SolutionLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D979C8262D24C500E5E053 /* SolutionLinkedList.swift */; };
+		93D979CE262D2E1B00E5E053 /* LEETCodeSolutions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D979CD262D2E1B00E5E053 /* LEETCodeSolutions.swift */; };
+		93F2BDA5263D34E30029070F /* RandomQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F2BDA4263D34E30029070F /* RandomQuestions.swift */; };
 		93FC82B92547C718004339D0 /* Displayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC82B82547C718004339D0 /* Displayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		936B13B52627E094003B00F3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		937EC644260F2D7F00A27CB4 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		937EC648260F2D9400A27CB4 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		93B137DA242C408A005F1779 /* DSQuestionBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSQuestionBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B137DD242C408A005F1779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B137DF242C408A005F1779 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +50,9 @@
 		93B137FB242C4176005F1779 /* StringQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringQuestions.swift; sourceTree = "<group>"; };
 		93B137FF242C4176005F1779 /* ArrayQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayQuestions.swift; sourceTree = "<group>"; };
 		93D850A325DE13B300527B83 /* PracticeQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeQuestions.swift; sourceTree = "<group>"; };
+		93D979C8262D24C500E5E053 /* SolutionLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionLinkedList.swift; sourceTree = "<group>"; };
+		93D979CD262D2E1B00E5E053 /* LEETCodeSolutions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEETCodeSolutions.swift; sourceTree = "<group>"; };
+		93F2BDA4263D34E30029070F /* RandomQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuestions.swift; sourceTree = "<group>"; };
 		93FC82B82547C718004339D0 /* Displayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +67,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		937EC643260F2D7200A27CB4 /* LEETCode */ = {
+			isa = PBXGroup;
+			children = (
+				937EC644260F2D7F00A27CB4 /* Array.swift */,
+				936B13B52627E094003B00F3 /* String.swift */,
+				937EC648260F2D9400A27CB4 /* Tree.swift */,
+				93D979C8262D24C500E5E053 /* SolutionLinkedList.swift */,
+				93F2BDA4263D34E30029070F /* RandomQuestions.swift */,
+				93D979CD262D2E1B00E5E053 /* LEETCodeSolutions.swift */,
+			);
+			path = LEETCode;
+			sourceTree = "<group>";
+		};
 		93B137D1242C4089005F1779 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +99,7 @@
 		93B137DC242C408A005F1779 /* DSQuestionBasket */ = {
 			isa = PBXGroup;
 			children = (
+				937EC643260F2D7200A27CB4 /* LEETCode */,
 				93B137FE242C4176005F1779 /* Array */,
 				93B137FD242C4176005F1779 /* Graph */,
 				93B137F3242C4176005F1779 /* LinkedList */,
@@ -228,10 +254,16 @@
 				93D850A425DE13B300527B83 /* PracticeQuestions.swift in Sources */,
 				93B13807242C4176005F1779 /* ArrayQuestions.swift in Sources */,
 				93B13801242C4176005F1779 /* LinkedListQuestions.swift in Sources */,
+				93F2BDA5263D34E30029070F /* RandomQuestions.swift in Sources */,
+				937EC649260F2D9400A27CB4 /* Tree.swift in Sources */,
 				93FC82B92547C718004339D0 /* Displayer.swift in Sources */,
 				93B137DE242C408A005F1779 /* AppDelegate.swift in Sources */,
+				937EC645260F2D7F00A27CB4 /* Array.swift in Sources */,
 				93B13805242C4176005F1779 /* BinaryTree.swift in Sources */,
+				936B13B62627E094003B00F3 /* String.swift in Sources */,
 				93B137E0242C408A005F1779 /* SceneDelegate.swift in Sources */,
+				93D979CE262D2E1B00E5E053 /* LEETCodeSolutions.swift in Sources */,
+				93D979C9262D24C500E5E053 /* SolutionLinkedList.swift in Sources */,
 				93B13800242C4176005F1779 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,13 +409,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NKABDVFYQA;
+				DEVELOPMENT_TEAM = 63NQ2DGQ38;
 				INFOPLIST_FILE = DSQuestionBasket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com..DSQuestionBasket;
+				PRODUCT_BUNDLE_IDENTIFIER = com..DSQuestionBaskett;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
