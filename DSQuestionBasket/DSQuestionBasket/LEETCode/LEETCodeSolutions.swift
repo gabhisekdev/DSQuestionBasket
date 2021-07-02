@@ -76,6 +76,7 @@ extension LeetCodeSolutions {
         testLevelOrder()
         testMaxDepthBST_TopDownApproach()
         testHasPathSum()
+        testIsBST()
     }
     
     func testSymmetry() {
@@ -119,6 +120,18 @@ extension LeetCodeSolutions {
         
         displayPrint("Path sum") {
             print(SolutionPathSum().hasPathSum(node, 22))
+        }
+    }
+    
+    func testIsBST() {
+        let fifth = TreeNode(6)
+        let fourth = TreeNode(3)
+        let third = TreeNode(4, fourth, fifth)
+        let second = TreeNode(1)
+        let root = TreeNode(5, second, third)
+        
+        displayPrint("LEET - IS BST") {
+            print(SolutionIsBST().isValidBST(root))
         }
     }
 }

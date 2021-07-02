@@ -182,6 +182,32 @@ class SolutionPathSum {
     }
 }
 
+class SolutionIsBST {
+    func isValidBST(_ root: TreeNode?) -> Bool {
+        if root != nil {
+            if root?.right != nil && root?.left != nil {
+                if root!.right!.val > root!.val && root!.left!.val < root!.val {
+                    return isValidBST(root?.right) && isValidBST(root?.left)
+                }
+            } else if root?.right != nil && root?.left == nil {
+                if root!.right!.val > root!.val {
+                    return isValidBST(root?.right) && isValidBST(root?.left)
+                }
+            } else if root?.right == nil && root?.left != nil {
+                if root!.left!.val < root!.val {
+                    return isValidBST(root?.right) && isValidBST(root?.left)
+                }
+            }
+            
+            return false
+            
+        } else {
+            return true
+        }
+                
+    }
+}
+
 
 extension Array {
     var isNotEmpty: Bool {

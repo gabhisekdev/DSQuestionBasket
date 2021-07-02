@@ -46,6 +46,7 @@ extension BinaryTree {
         
         print("Level - \(level)")
         print("Max Level - \(maxLevel)")
+        
         if maxLevel < level {
             print(node.value)
             maxLevel += 1

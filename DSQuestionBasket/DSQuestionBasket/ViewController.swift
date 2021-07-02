@@ -19,12 +19,6 @@ class ViewController: UIViewController  {
         testPracticeQuestions()
         
         LeetCodeSolutions().solve()
-        
-        var parentString: String? = "Hello Swift!"
-        withUnsafePointer(to: &parentString, { NSLog("($0)") })
-
-        let someIndex = parentString?.prefix(6)
-        parentString = nil
     }
 }
 

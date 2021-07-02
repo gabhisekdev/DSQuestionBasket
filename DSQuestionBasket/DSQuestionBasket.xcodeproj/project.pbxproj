@@ -34,6 +34,7 @@
 		936B13B52627E094003B00F3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		937EC644260F2D7F00A27CB4 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		937EC648260F2D9400A27CB4 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		93AA5A632650E95B00C16C1F /* PrqacticePlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PrqacticePlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		93B137DA242C408A005F1779 /* DSQuestionBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSQuestionBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B137DD242C408A005F1779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B137DF242C408A005F1779 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +81,14 @@
 			path = LEETCode;
 			sourceTree = "<group>";
 		};
+		93AA5A622650E93200C16C1F /* PracticePlayground */ = {
+			isa = PBXGroup;
+			children = (
+				93AA5A632650E95B00C16C1F /* PrqacticePlayground.playground */,
+			);
+			name = PracticePlayground;
+			sourceTree = "<group>";
+		};
 		93B137D1242C4089005F1779 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +108,7 @@
 		93B137DC242C408A005F1779 /* DSQuestionBasket */ = {
 			isa = PBXGroup;
 			children = (
+				93AA5A622650E93200C16C1F /* PracticePlayground */,
 				937EC643260F2D7200A27CB4 /* LEETCode */,
 				93B137FE242C4176005F1779 /* Array */,
 				93B137FD242C4176005F1779 /* Graph */,
