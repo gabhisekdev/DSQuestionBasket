@@ -111,10 +111,8 @@
 				93AA5A622650E93200C16C1F /* PracticePlayground */,
 				937EC643260F2D7200A27CB4 /* LEETCode */,
 				93B137FE242C4176005F1779 /* Array */,
-				93B137FD242C4176005F1779 /* Graph */,
 				93B137F3242C4176005F1779 /* LinkedList */,
 				93B137F1242C4176005F1779 /* Queue */,
-				93B137FC242C4176005F1779 /* Stack */,
 				93B137FA242C4176005F1779 /* String */,
 				93B137F6242C4176005F1779 /* Tree */,
 				93B137DD242C408A005F1779 /* AppDelegate.swift */,
@@ -162,20 +160,6 @@
 				93B137FB242C4176005F1779 /* StringQuestions.swift */,
 			);
 			path = String;
-			sourceTree = "<group>";
-		};
-		93B137FC242C4176005F1779 /* Stack */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Stack;
-			sourceTree = "<group>";
-		};
-		93B137FD242C4176005F1779 /* Graph */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Graph;
 			sourceTree = "<group>";
 		};
 		93B137FE242C4176005F1779 /* Array */ = {
